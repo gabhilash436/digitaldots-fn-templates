@@ -1,0 +1,3 @@
+language: digitaldots-java8
+welcome_message: |
+  You have created a function using the digitaldots java8 and maven template
