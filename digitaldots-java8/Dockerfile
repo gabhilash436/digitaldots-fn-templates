@@ -14,13 +14,13 @@ RUN chmod +x /usr/bin/fwatchdog
 WORKDIR /home/app
 
 
-COPY --from=builder /home/app/function/target/java8maven-1.0-SNAPSHOT-jar-with-dependencies.jar ./java8maven-1.0-SNAPSHOT-jar-with-dependencies.jar
+COPY --from=builder /home/app/function/target/function-1.0-SNAPSHOT-jar-with-dependencies.jar ./function-1.0-SNAPSHOT-jar-with-dependencies.jar
 
 user app
 WORKDIR /home/app/
 ENV upstream_url="http://127.0.0.1:8082"
 ENV mode="http"
-ENV fprocess="java -jar java8maven-1.0-SNAPSHOT-jar-with-dependencies.jar"
+ENV fprocess="java -jar function-1.0-SNAPSHOT-jar-with-dependencies.jar"
 
 EXPOSE 8080
 
